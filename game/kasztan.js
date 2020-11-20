@@ -99,7 +99,12 @@ let items = [{
     "description": "Spróbuj swojego szczęścia otwierając skrzynkę. Możliwa strata albo zysk kasztanów.",
     "price": 1000,
     "code": "openCase();localStorage.bought = localStorage.bought.split('Skrzynka;').join('');"
-}]
+}, {
+    "name": "Fabryka kasztanów",
+    "description": "Klika 20 kasztanów co 1 sekundę",
+    "price": 2000,
+    "code": `kasztanyPerSecond += 20`
+},]
 
 items.forEach(function (item) {
     let times = 0
