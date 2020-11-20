@@ -3,3 +3,4 @@ Kasztan Clicker v1.3
     - Dodano menu startowe
     - Strona jest teraz responsywna (działa na telefonach)
     - Wprowadzono skrzynki (TheTrollErrorsGuy65)
+    - Dodano fallbackowe czcionki
