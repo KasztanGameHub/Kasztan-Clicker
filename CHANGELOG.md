@@ -1,3 +1,6 @@
+### Kasztan Clicker v1.3.2
+- Od teraz, HTML w grze się waliduje i jest w 100% poprawny :thumbsup:
+
 ### Kasztan Clicker v1.3.1
 - Dodano Farbykę kasztanów - produkuje 20 kasztanów co sekundę, kosztuje 2000 kasztanów
 
