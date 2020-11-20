@@ -1,0 +1,172 @@
+body {
+    background: rgb(20, 20, 20);
+    color: white;
+    font-family: "Segoe UI", "Seravek", "Ubuntu", -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    user-select: none;
+    overflow-x: hidden;
+}
+
+#kasztan {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.05s;
+    width: 300px;
+    height: 300px;
+}
+
+#plus1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+}
+
+#plus1 * {
+    transition: all 0.4s;
+    position: absolute;
+}
+
+#pts {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    margin: 0px 0px;
+    color: white;
+}
+
+#shop {
+    background: rgb(10, 10, 10);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: center;
+    width: calc(50% - 200px);
+    height: 100%;
+}
+
+#shopItem {
+    margin: 5px 5px;
+    padding: 5px 5px;
+    background: rgb(0, 0, 0);
+    text-align: left;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+#shopItem:hover {
+    background: rgb(30, 30, 30);
+}
+
+#shopItem * {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#b_active {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    margin: 0px 0px;
+}
+
+.version_id {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 75%;
+    color: white;
+    margin: 0px 0px;
+    text-align: right;
+}
+
+/*skrzynki*/
+
+#case_ui {
+    position: absolute;
+    top: 0px;
+    transition: all 1s;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background: rgb(50, 50, 50);
+}
+
+#possible_drops {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: calc(100% - 20px);
+    margin: 10px 10px;
+    height: 200px;
+    background: rgb(20, 20, 20);
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+#possible_drops::-webkit-scrollbar {
+    width: 5px;
+}
+
+#possible_drops::-webkit-scrollbar-track {
+    background: rgb(30, 30, 30);
+}
+
+#possible_drops::-webkit-scrollbar-thumb, #possible_drops::-webkit-scrollbar-button {
+    display: none;
+}
+
+.drop {
+    width: 100px;
+    height: 120px;
+    background: rgb(30, 30, 30);
+    margin: 10px 10px;
+    padding-top: 40px;
+    text-align: center;
+}
+
+#kasztan_openable {
+    background: url("kasztan_zamkniety.png");
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    width: 250px;
+    height: 250px;
+    transform: translateX(-50%);
+}
+
+#opening {
+    position: absolute;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    top: 0px;
+    transition: opacity 0.25s, width 0.25s;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#opening h1 {
+    margin: 0px 0px;
+    transition: all 0.5s;
+    position: absolute;
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 600px) {
+    #shop {
+        position: static !important;
+        width: 100vw;
+    }
+    #kasztan, #plus1 {
+        top: 100vh;
+    }
+}

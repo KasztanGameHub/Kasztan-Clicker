@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>Kasztan Clicker</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+</head>
+
+<body onkeypress="kp(event)">
+    <img src="kasztan.png" id="kasztan" draggable="false" />
+    <h1 id="b_active" style="visibility: hidden;">Boost aktywny</h1>
+    <div id="plus1" onclick="clicks += 1;update();kasztanAnim();"></div>
+    <div id="shop">
+        <h1>kasztanowa technologia</h1>
+        <h1 id="pts">0</h1>
+    </div>
+    <div id="case_ui">
+        <span id="kasztan_openable" onclick="actualOpening();"></span>
+        <div id="possible_drops"></div>
+    </div>
+    <p class="version_id">Kasztan Clicker v1.3<br>kasztan.tech</p>
+    <div id="opening" style="display: none;opacity: 0;">
+        <h1></h1>
+    </div>
+</body>
+<script src="./kasztan.js"></script>
+<script src="./caseOpen.js"></script>
+<script src="./spaceEvent.js"></script>
+
+</html>
