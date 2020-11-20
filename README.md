@@ -4,7 +4,7 @@ Clicker, w którym klikasz na kasztana<br>
 Orginalny kod stworzony przez @TheTrollErrorsGuy65 ale on już nie ma pomysłów na tą grę, więc teraz ja jestem maintainerem.<br>
 Changelog jest w pliku CHANGELOG
 ### Strona
-Najnowsza/niestabilna wersja jest dostępna na http://programistazpolski.ct8.pl/kasztanclicker/<br>
+Najnowsza/niestabilna wersja jest dostępna na https://programistazpolski.ct8.pl/kasztanclicker/<br>
 Stabilna wersja jest dostępna na http://kasztan.tech/ (aczkolwiek czekam aż toro zaaktualizuje pliki)
 ![](https://raw.githubusercontent.com/ProgramistaZpolski/kasztan-clicker/master/Screenshot_2020-11-20%20Kasztan%20Clicker.png)
 <p>
