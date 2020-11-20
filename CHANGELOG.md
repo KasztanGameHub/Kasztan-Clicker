@@ -10,3 +10,4 @@
 - Strona jest teraz responsywna (działa na telefonach)
 - Wprowadzono skrzynki (TheTrollErrorsGuy65)
 - Dodano fallbackowe czcionki
+- Sformatowano poprawnie kod
