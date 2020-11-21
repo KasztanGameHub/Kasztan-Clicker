@@ -62,14 +62,6 @@ let KPS = setInterval(function () {
         }, Math.floor(Math.random() * 500))
         c += 1;
     }
-
-
-    // TODO: Przenieść to w osobną funkcję dla każdego przedmiotu w sklepie
-    if (kasztanyPerSecond >= 10) {
-        // pierwsze 10 kursorów po 100 kasztanów, później coraz drożej
-        items[0].price = (kasztanyPerSecond / 10) * 100;
-        document.querySelector("#shopItem").querySelector("p").innerHTML = items[0].price + " kasztanów";
-    }
 }, 1000);
 
 
@@ -80,7 +72,8 @@ let items = [{
     "name": "Kursor",
     "description": "Klika kasztana co 1 sekundę",
     "price": 100,
-    "code": `kasztanyPerSecond += 1`
+    "code": `kasztanyPerSecond += 1`,
+    "id": "000000"
 }, {
     "name": "Boost",
     "description": "Co 5 minut każdy kliknięty kasztan jest podwajany na 30 sekund.",
@@ -95,18 +88,29 @@ let items = [{
             document.querySelector("#b_active").style.visibility = "hidden"
         }, 30000);
         
-    }, 300000)`
+    }, 300000)`,
+    "id": "000001"
 }, {
     "name": "Skrzynka",
     "description": "Spróbuj swojego szczęścia otwierając skrzynkę. Możliwa strata albo zysk kasztanów.",
     "price": 1000,
-    "code": "openCase();localStorage.bought = localStorage.bought.split('Skrzynka;').join('');"
+    "code": "openCase();localStorage.bought = localStorage.bought.split('Skrzynka;').join('');",
+    "id": "000002"
 }, {
     "name": "Fabryka kasztanów",
     "description": "Klika 20 kasztanów co 1 sekundę",
     "price": 2000,
-    "code": `kasztanyPerSecond += 20`
+    "code": `kasztanyPerSecond += 20`,
+    "id": "000003"
 },];
+
+items.forEach(function (item) {
+    if (localStorage.getItem(`price${item.id}`) == null) {
+        localStorage.setItem(`price${item.id}`, item.price);
+    } else {
+        item.price = localStorage.getItem(`price${item.id}`);
+    }
+});
 
 items.forEach(function (item) {
     let times = 0;
@@ -115,7 +119,8 @@ items.forEach(function (item) {
     <h2>${item.name}</h2>
     <h3>${item.description}</h3>
     <p>${item.price} kasztanów</p>`;
-    e.id = "shopItem";
+    e.classList.add("shopItem");
+    e.id = `shopItem-${item.id}`;
     e.onclick = function () {
         if (parseInt(localStorage.clicks) >= item.price) {
             times += 1;
@@ -125,7 +130,10 @@ items.forEach(function (item) {
             localStorage.bought += item.name + ";";
             e.style.color = "#84ff66";
             eval(item.code);
-
+            item.price *= 1.1;
+            item.price = Math.round(item.price);
+            localStorage.setItem(`price${item.id}`, item.price);
+            document.querySelector(`#shopItem-${item.id}`).querySelector("p").innerText = `${item.price} kasztanów`;
         } else {
             e.style.color = "#cc0407";
             setTimeout(function () {

@@ -48,7 +48,7 @@ body {
     height: 100%;
 }
 
-#shopItem {
+.shopItem {
     margin: 5px 5px;
     padding: 5px 5px;
     background: rgb(0, 0, 0);
@@ -57,11 +57,11 @@ body {
     transition: 0.1s;
 }
 
-#shopItem:hover {
+.shopItem:hover {
     background: rgb(30, 30, 30);
 }
 
-#shopItem * {
+.shopItem * {
     margin-top: 0px;
     margin-bottom: 0px;
 }
@@ -143,6 +143,7 @@ body {
 #opening {
     position: absolute;
     text-align: center;
+    /* TODO: backdrop-filter nie jest wspierane w firefoxie, trzeba to zamienić na inny styl! */
     backdrop-filter: blur(10px);
     top: 0px;
     transition: opacity 0.25s, width 0.25s;

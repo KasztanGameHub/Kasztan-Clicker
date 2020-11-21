@@ -1,3 +1,6 @@
+### Kasztan Clicker v1.3.4
+- Nowy system cen
+
 ### Kasztan Clicker v1.3.3
 - Skompresowano obrazki z kasztanami aby gra się szybciej ładowała
 
