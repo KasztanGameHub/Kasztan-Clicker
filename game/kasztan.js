@@ -1,12 +1,18 @@
 // Głowne skrypty
 'use strict';
 
+let zimaActive = false;
+
 if (window.location.href.includes("reset=1")) {
     localStorage.clear();
 }
 
 function update() {
-    localStorage.clicks = Math.round(clicks) / 10;
+    if (zimaActive) {
+        localStorage.clicks = Math.round(clicks) / 10;
+    } else {
+        localStorage.clicks = Math.round(clicks);
+    }
     document.querySelector("#pts").innerHTML = localStorage.clicks;
 }
 
@@ -221,12 +227,12 @@ function specialEventHandler(eventid) { // funkcja uruchamiająca eventy
         document.querySelector("#eventmodal_name").innerText = "Zima";
         document.querySelector("#eventmodal_desc").innerHTML = "Zima sprawia, że zarabiasz 50% mniej kasztanów za kliknięcie!<br>Czas trwania: 2 minuty";
         kasztanAdd *= 0.5;
+        zimaActive = true;
         kasztanAnimVal = "+0,5";
         setTimeout(function () {
             kasztanAdd = Math.round(kasztanAdd *= 1.5);
             kasztanAnimVal = "+1";
             document.querySelector(".eventmodal").style.display = "none";
-            localStorage.clicks = Math.round(clicks);
         }, 120000);
     } else if (eventid == "storm") {
         document.querySelector(".eventmodal").style.display = "block";
