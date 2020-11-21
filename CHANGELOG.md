@@ -1,5 +1,8 @@
 ### Kasztan Clicker v1.4
 
+#### Kasztan Clicker v1.4 Beta4
+- Naprawiono event zimy (jeszcze jeszcze raz)
+
 #### Kasztan Clicker v1.4 Beta3
 - Naprawiono event zimy (jeszcze raz)
 
