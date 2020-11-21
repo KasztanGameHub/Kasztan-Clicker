@@ -93,6 +93,7 @@ body {
     width: 100%;
     height: 100%;
     background: rgb(50, 50, 50);
+    display: none;
 }
 
 #possible_drops {
@@ -162,6 +163,8 @@ body {
     transform: translateX(-50%);
 }
 
+/* Media Queries */
+
 @media (max-width: 600px) {
     #shop {
         position: static !important;
@@ -170,4 +173,25 @@ body {
     #kasztan, #plus1 {
         top: 100vh;
     }
+}
+
+/* Eventowy modal */
+
+.eventmodal {
+    padding: 12px 12px 12px 12px;
+    border-radius: 2px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    background-color: #4A5568;
+    bottom: 0;
+    display: none;
+}
+
+.eventmodal h3 {
+    font-weight: 400;
+}
+
+.eventmodal img {
+    width: 15vw;
 }

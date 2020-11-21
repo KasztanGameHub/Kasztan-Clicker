@@ -21,6 +21,8 @@ if (localStorage.getItem("bought") == null) localStorage.bought = "";
 update();
 
 
+let kasztanAnimVal = "+1";
+
 function kasztanAnim() {
     document.querySelector("#kasztan").style.width = "325px";
     document.querySelector("#kasztan").style.height = "325px";
@@ -31,7 +33,7 @@ function kasztanAnim() {
 
     // animacja "+1"
     let p1 = document.createElement("h1");
-    p1.innerHTML = "+1";
+    p1.innerHTML = kasztanAnimVal;
     document.querySelector("#plus1").appendChild(p1);
     p1.style.color = "black";
     p1.style.left = Math.floor(Math.random() * 250) + "px";
@@ -152,3 +154,82 @@ items.forEach(function (item) {
         }
     })
 })
+
+
+
+setInterval(function () { // losowe wybieranie eventów
+    if (Math.random() > 0.75) {
+        if (Math.random() > 0.5) {
+            specialEventHandler("inflation");
+        } else {
+            specialEventHandler("storm");
+        }
+    } else if (Math.random() > 0.25) {
+        if (Math.random() > 0.5) {
+            specialEventHandler("deflation");
+        } else {
+            specialEventHandler("winter");
+        }
+    }
+}, 30000);
+
+function specialEventHandler(eventid) { // funkcja uruchamiająca eventy
+    if (eventid == "inflation") {
+        document.querySelector(".eventmodal").style.display = "block";
+        document.querySelector("#eventmodal_img").src = "./img/stonks.jpg"; // do inflacji powinno być not stonks, ale ok
+        document.querySelector("#eventmodal_name").innerText = "Inflacja!";
+        document.querySelector("#eventmodal_desc").innerHTML = "Ekonomia zapadła w depresję, ceny są 25% wyższe!<br>Czas trwania: 1 minuta";
+        items.forEach(function (item) {
+            item.price *= 1.25;
+            item.price = Math.round(item.price);
+            document.querySelector(`#shopItem-${item.id}`).querySelector("p").innerText = `${item.price} kasztanów`;
+        });
+        setTimeout(function () {
+            items.forEach(function (item) {
+                item.price = Math.round(item.price *= 0.80);
+                document.querySelector(`#shopItem-${item.id}`).querySelector("p").innerText = `${item.price} kasztanów`;
+                document.querySelector(".eventmodal").style.display = "none";
+            });
+        }, 60000);
+    } else if (eventid == "deflation") {
+        document.querySelector(".eventmodal").style.display = "block";
+        document.querySelector("#eventmodal_img").src = "./img/stonks.jpg";
+        document.querySelector("#eventmodal_name").innerText = "Deflacja!";
+        document.querySelector("#eventmodal_desc").innerHTML = "Ekonomia ma się bardzo dobrze, ceny są 20% niższe!<br>Czas trwania: 1 minuta";
+        items.forEach(function (item) {
+            item.price *= 0.8;
+            item.price = Math.round(item.price);
+            document.querySelector(`#shopItem-${item.id}`).querySelector("p").innerText = `${item.price} kasztanów`;
+        });
+        setTimeout(function () {
+            items.forEach(function (item) {
+                item.price = Math.round(item.price *= 1.25);
+                document.querySelector(`#shopItem-${item.id}`).querySelector("p").innerText = `${item.price} kasztanów`;
+                document.querySelector(".eventmodal").style.display = "none";
+            });
+        }, 60000);
+    } else if (eventid == "winter") {
+        document.querySelector(".eventmodal").style.display = "block";
+        document.querySelector("#eventmodal_img").src = "./img/winter.jpg";
+        document.querySelector("#eventmodal_name").innerText = "Zima";
+        document.querySelector("#eventmodal_desc").innerHTML = "Zima sprawia, że zarabiasz 50% mniej kasztanów za kliknięcie!<br>Czas trwania: 2 minuty";
+        kasztanyPerSecond = Math.round(kasztanyPerSecond *= 0.5);
+        kasztanAnimVal = "+0,5";
+        setTimeout(function () {
+            kasztanyPerSecond = Math.round(kasztanyPerSecond *= 1.5);
+            kasztanAnimVal = "+1";
+            document.querySelector(".eventmodal").style.display = "none";
+        }, 120000);
+    } else if (eventid == "storm") {
+        document.querySelector(".eventmodal").style.display = "block";
+        document.querySelector("#eventmodal_img").src = "./img/storm.jpg";
+        document.querySelector("#eventmodal_name").innerText = "Storm";
+        document.querySelector("#eventmodal_desc").innerHTML = "Storm sprawia, że tracisz 25% swoich kasztanów!";
+        let oldKasztanVal = parseInt(localStorage.getItem("clicks"));
+        let newKasztanVal = Math.round(oldKasztanVal *= 0.75)
+        localStorage.setItem("clicks", newKasztanVal);
+        setTimeout(function() {
+            document.querySelector(".eventmodal").style.display = "none";
+        }, 10000)
+    }
+}

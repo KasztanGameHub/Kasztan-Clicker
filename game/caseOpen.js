@@ -1,7 +1,10 @@
 const drops = [5, 40, 75, 90, 140, 200, 300, 400, 700, 1000, 2000, 3000, 4000, 999999]
 
 function openCase() {
-    document.querySelector("#case_ui").style.left = "0%"
+    document.querySelector("#case_ui").style.display = "block";
+    setTimeout(function() {
+        document.querySelector("#case_ui").style.left = "0%";
+    }, 500);
     drops.forEach(function (d) {
         let dr = document.createElement("div")
         dr.className = "drop"

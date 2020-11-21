@@ -1,3 +1,9 @@
+### Kasztan Clicker v1.4
+
+#### Kasztan Clicker v1.4 Beta1
+- Dodano eventy
+- Naprawiono błąd pozwalający zobaczyć UI casów w firefoxie
+
 ### Kasztan Clicker v1.3.4
 - Nowy system cen
 
