@@ -6,7 +6,7 @@ if (window.location.href.includes("reset=1")) {
 }
 
 function update() {
-    localStorage.clicks = clicks;
+    localStorage.clicks = Math.round(clicks) / 10;
     document.querySelector("#pts").innerHTML = localStorage.clicks;
 }
 
@@ -22,6 +22,13 @@ update();
 
 
 let kasztanAnimVal = "+1";
+let kasztanAdd = 1;
+
+function addKasztanOnClick() {
+    clicks += kasztanAdd;
+    update();
+    kasztanAnim();
+}
 
 function kasztanAnim() {
     document.querySelector("#kasztan").style.width = "325px";
@@ -213,12 +220,13 @@ function specialEventHandler(eventid) { // funkcja uruchamiająca eventy
         document.querySelector("#eventmodal_img").src = "./img/winter.jpg";
         document.querySelector("#eventmodal_name").innerText = "Zima";
         document.querySelector("#eventmodal_desc").innerHTML = "Zima sprawia, że zarabiasz 50% mniej kasztanów za kliknięcie!<br>Czas trwania: 2 minuty";
-        kasztanyPerSecond = Math.round(kasztanyPerSecond *= 0.5);
+        kasztanAdd *= 0.5;
         kasztanAnimVal = "+0,5";
         setTimeout(function () {
-            kasztanyPerSecond = Math.round(kasztanyPerSecond *= 1.5);
+            kasztanAdd = Math.round(kasztanAdd *= 1.5);
             kasztanAnimVal = "+1";
             document.querySelector(".eventmodal").style.display = "none";
+            localStorage.clicks = Math.round(clicks);
         }, 120000);
     } else if (eventid == "storm") {
         document.querySelector(".eventmodal").style.display = "block";
@@ -228,8 +236,25 @@ function specialEventHandler(eventid) { // funkcja uruchamiająca eventy
         let oldKasztanVal = parseInt(localStorage.getItem("clicks"));
         let newKasztanVal = Math.round(oldKasztanVal *= 0.75)
         localStorage.setItem("clicks", newKasztanVal);
-        setTimeout(function() {
+        setTimeout(function () {
             document.querySelector(".eventmodal").style.display = "none";
         }, 10000)
+    }
+}
+
+
+// przeniosłem to ze spaceEvent gdyż teraz trzeba sterować ilością kasztanow na klikniecie
+let debounce = false;
+
+function kp(event) {
+    if (event.keyCode == 32 && debounce == false) {
+        // spacja
+        debounce = true;
+        clicks += kasztanAdd;
+        update();
+        kasztanAnim();
+        setTimeout(function () {
+            debounce = false;
+        }, 200)
     }
 }

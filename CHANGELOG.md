@@ -1,5 +1,8 @@
 ### Kasztan Clicker v1.4
 
+#### Kasztan Clicker v1.4 Beta2
+- Naprawiono event zimy
+
 #### Kasztan Clicker v1.4 Beta1
 - Dodano eventy
 - Naprawiono błąd pozwalający zobaczyć UI casów w firefoxie
