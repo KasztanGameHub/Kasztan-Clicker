@@ -1,5 +1,8 @@
 ### Kasztan Clicker v1.4
 
+#### Kasztan Clicker v1.4 Beta5
+- Dodano wsparcie dla Safari i innych przeglądarek niewspierających webp
+
 #### Kasztan Clicker v1.4 Beta4
 - Naprawiono event zimy (jeszcze jeszcze raz)
 

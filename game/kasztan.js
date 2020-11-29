@@ -6,6 +6,10 @@ let zimaActive = false;
 if (window.location.href.includes("reset=1")) {
     localStorage.clear();
 }
+if (window.location.href.includes("webp=false")) {
+    document.querySelector("#kasztan").src = "./img/kasztan.png";
+    document.querySelector("#kasztan_openable").style.background = "url('./img/kasztan_zamkniety.png') !important";
+}
 
 function update() {
     if (zimaActive) {
