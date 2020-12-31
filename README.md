@@ -6,5 +6,5 @@ Orginalny kod stworzony przez @TheTrollErrorsGuy65 ale on już nie ma pomysłów
 Changelog jest w pliku CHANGELOG
 ### Strona
 Najnowsza/niestabilna wersja jest dostępna na https://programistazpolski.ct8.pl/kasztanclicker/<br>
-Stabilna wersja jest dostępna na http://kasztan.tech/ (aczkolwiek czekam aż toro zaaktualizuje pliki)
+Wcześniej gra była dostępna na http://kasztan.tech/
 ![](https://raw.githubusercontent.com/ProgramistaZpolski/kasztan-clicker/master/Screenshot_2020-11-20%20Kasztan%20Clicker.png)
