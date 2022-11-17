@@ -132,7 +132,7 @@ body {
 }
 
 #kasztan_openable {
-    background: url("kasztan_zamkniety.webp");
+    background: url("./img/kasztan_zamkniety.webp");
     position: absolute;
     top: 100px;
     left: 50%;

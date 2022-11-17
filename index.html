@@ -13,13 +13,13 @@
         <h1>Kasztan Clicker</h1>
     </header>
     <main>
-        <button id="newgame" onclick="gameLoader(true);">Nowa gra<svg width="1em"
+        <button id="newgame" onclick="window.location = './game/index.html?reset=1'">Nowa gra<svg width="1em"
                 height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
                 <path
                     d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
             </svg></button><br>
-        <button id="continue" onclick="gameLoader(false);">Kontynuuj<svg width="1em"
+        <button id="continue" onclick="window.location = './game/index.html?reset=0'">Kontynuuj<svg width="1em"
                 height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd"
                     d="M0 10a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-1zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm2 0a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" />
@@ -33,8 +33,6 @@
             </svg></button>
     </main>
     <p class="version_id">Kasztan Clicker v1.4-BETA5<br>kasztan.tech</p>
-    <script src="./lib/modernizr.js"></script>
-    <script src="./feature_adapt.js"></script>
 </body>
 
 </html>
