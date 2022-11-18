@@ -9,7 +9,7 @@ if (window.location.href.includes("reset=1")) {
 
 function update() {
     if (zimaActive) {
-        localStorage.clicks = Math.round(clicks) / 10;
+        localStorage.clicks = Math.round(clicks * 10) / 10;
     } else {
         localStorage.clicks = Math.round(clicks);
     }
@@ -233,6 +233,7 @@ function specialEventHandler(eventid) { // funkcja uruchamiająca eventy
             kasztanAdd = Math.round(kasztanAdd *= 1.5);
             kasztanAnimVal = "+1";
             document.querySelector(".eventmodal").style.display = "none";
+            zimaActive = false;
         }, 120000);
     } else if (eventid == "storm") {
         document.querySelector(".eventmodal").style.display = "block";
