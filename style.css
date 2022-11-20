@@ -25,6 +25,12 @@ button {
     /* zaograklone rogi */
 }
 
+/* about */
+ul {
+    padding-left: 0;
+    list-style-position: inside;
+}
+
 /* gdy przycisk najechany */
 
 button:hover {
