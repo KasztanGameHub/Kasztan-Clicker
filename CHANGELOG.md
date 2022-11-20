@@ -1,5 +1,10 @@
 ### Kasztan Clicker v1.4
 
+#### Kasztan Clicker v1.5 Beta1
+- Naprawiono zimę (po 2 latach xD)
+- Mały fix w CSS
+- Usunięto wsparcie dla przeglądarek bez WEBP (większość wspiera w dziesiejszych czasach)
+
 #### Kasztan Clicker v1.4 Beta5
 - Dodano wsparcie dla Safari i innych przeglądarek niewspierających webp
 
