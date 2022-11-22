@@ -177,7 +177,9 @@ setInterval(function () { // losowe wybieranie eventów
         if (Math.random() > 0.5) {
             specialEventHandler("deflation");
         } else {
-            specialEventHandler("winter");
+            if (!zimaActive) {
+                specialEventHandler("winter");
+            }
         }
     }
 }, 30000);
