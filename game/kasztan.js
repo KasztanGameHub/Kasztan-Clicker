@@ -3,10 +3,6 @@
 
 let zimaActive = false;
 
-if (window.location.href.includes("reset=1")) {
-    localStorage.clear();
-}
-
 function update() {
     if (zimaActive) {
         localStorage.clicks = Math.round(clicks * 10) / 10;
