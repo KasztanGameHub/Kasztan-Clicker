@@ -1,5 +1,10 @@
 ### Kasztan Clicker v1.4
 
+#### Kasztan Clicker v1.5 Beta2
+- Naprawiono zimę (again)
+- Naprawiono reset gry podczas otwierania case
+- Pulled favicon from kasztan.space
+
 #### Kasztan Clicker v1.5 Beta1
 - Naprawiono zimę (po 2 latach xD)
 - Mały fix w CSS
